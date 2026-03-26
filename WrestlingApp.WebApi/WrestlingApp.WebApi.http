@@ -1,0 +1,6 @@
+@WrestlingApp.WebApi_HostAddress = http://localhost:5216
+
+GET {{WrestlingApp.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
