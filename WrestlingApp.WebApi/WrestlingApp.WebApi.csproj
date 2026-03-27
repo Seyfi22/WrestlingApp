@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WrestlingApp.Application\WrestlingApp.Application.csproj" />
-    <ProjectReference Include="..\WrestlingApp.Infrastructure\WrestlingApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\WrestlingApp.Application\WrestlingApp.Infrastructure.csproj" />
+    <ProjectReference Include="..\WrestlingApp.Infrastructure\WrestlingApp.Application.csproj" />
   </ItemGroup>
 
 </Project>

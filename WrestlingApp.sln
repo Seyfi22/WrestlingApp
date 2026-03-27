@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.37111.16 d17.14
+VisualStudioVersion = 17.14.37111.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingApp.Domain", "WrestlingApp.Domain\WrestlingApp.Domain.csproj", "{575B73EF-203F-472A-BF8D-CE5673ADA2EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingApp.Application", "WrestlingApp.Application\WrestlingApp.Application.csproj", "{D0AA32C9-C55C-425B-A68C-276041BE45EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingApp.Infrastructure", "WrestlingApp.Application\WrestlingApp.Infrastructure.csproj", "{D0AA32C9-C55C-425B-A68C-276041BE45EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingApp.Infrastructure", "WrestlingApp.Infrastructure\WrestlingApp.Infrastructure.csproj", "{0659B5A3-C7E8-4B94-AFAE-A3420A43A7B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingApp.Application", "WrestlingApp.Infrastructure\WrestlingApp.Application.csproj", "{0659B5A3-C7E8-4B94-AFAE-A3420A43A7B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrestlingApp.WebApi", "WrestlingApp.WebApi\WrestlingApp.WebApi.csproj", "{FE455015-0030-4E3F-90A8-2961BB7E58F6}"
 EndProject
