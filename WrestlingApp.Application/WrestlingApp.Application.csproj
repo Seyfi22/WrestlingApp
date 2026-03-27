@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WrestlingApp.Domain\WrestlingApp.Domain.csproj" />
+    <ProjectReference Include="..\WrestlingApp.Infrastructure\WrestlingApp.Application.csproj" />
   </ItemGroup>
 
 </Project>
