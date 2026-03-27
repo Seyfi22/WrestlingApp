@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WrestlingApp.Application\WrestlingApp.Application.csproj" />
     <ProjectReference Include="..\WrestlingApp.Domain\WrestlingApp.Domain.csproj" />
   </ItemGroup>
 
