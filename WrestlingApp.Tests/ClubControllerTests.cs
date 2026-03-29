@@ -1,10 +1,11 @@
-﻿using Moq;
-using WrestlingApp.Domain.Entities;
-using WrestlingApp.Application.Interfaces;
-using Xunit;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using Moq;
+using WrestlingApp.Application.Interfaces;
+using WrestlingApp.Domain.Entities;
 using WrestlingApp.WebApi.Controllers;
+using Xunit;
 
 namespace WrestlingApp.Tests
 {
@@ -13,26 +14,20 @@ namespace WrestlingApp.Tests
         [Fact]
         public async Task GetById_ReturnsOkResult_WhenClubExists()
         {
-            // --- 1. ARRANGE ---
             var mockRepo = new Mock<IGenericRepository<Club>>();
+
+            var mockCache = new Mock<IMemoryCache>();
+
             var fakeClub = new Club { Id = 1, Name = "Sumgayit Wrestling Club" };
 
-            // Reponu aldadırıq: "1 nömrəli ID istənsə, bu klubu qaytar"
             mockRepo.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(fakeClub);
 
-            // Controller-i yaradırıq və ona saxta repo-nu veririk (Dependency Injection)
-            var controller = new ClubController(mockRepo.Object);
+            var controller = new ClubController(mockRepo.Object, mockCache.Object);
 
-            // --- 2. ACT ---
-            var result = await controller.GetById(1); // Sənin metodunun adı fərqli ola bilər
+            var result = await controller.GetById(1);
 
-            // --- 3. ASSERT ---
-            // Yoxlayırıq ki, nəticə "OkObjectResult" (Status 200) tipindədirmi?
             var okResult = Assert.IsType<OkObjectResult>(result);
-
-            // İçindəki datanın bizim gözlədiyimiz klub olub-olmadığını yoxlayırıq
-            var returnedClub = Assert.IsType<Club>(okResult.Value);
-            Assert.Equal("Sumgayit Wrestling Club", returnedClub.Name);
+            Assert.Equal(fakeClub, okResult.Value);
         }
     }
 }
